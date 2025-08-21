@@ -1,0 +1,42 @@
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: sticky; 
+  top: 0;
+  padding-left: 120px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow:
+    12px 12px 32px rgba(0, 0, 0, 0.6), 
+    -12px -12px 32px rgba(22, 28, 29, 0.05); 
+
+  @include respond-down("lg") {
+    padding-left: 70px;
+  }
+
+  @include respond-down("lgmd") {
+      display: none;
+  }
+}
+
+.side-line{
+    width: 4px;
+    height: calc(100vh - 260px);
+    background: var(--black);
+    position: absolute;
+    bottom: 20px;
+    left: 74px;
+    z-index: 0;
+    box-shadow:
+      -1px -1px 2px rgba(#efb9a9,1),
+      0px 2px 2px rgba(0,0,0,.6),
+      inset 1px 1px 2px rgba(0,0,0,.65),
+      inset -1px -1px 2px rgba(#efb9a9, .3);
+
+  @include respond-down("lg") {
+    left: 34px;
+  }
+}

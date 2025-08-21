@@ -1,0 +1,115 @@
+.projects{
+    &__description{
+        margin-bottom: 40px;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; 
+
+        @include respond-down("sm") {
+          grid-template-columns: 1fr;
+        }
+    }
+}
+
+// =================== Tokens ===================
+$canvas:   #0f1315;                     // page bg
+$surface: #1a1a1a;     // card background                   // card bg
+$accent:   #f2b49a;                     // peach
+$text:     rgba(255,245,235,.9);
+$muted:    rgba(255,245,235,.7);
+
+$hi:       rgba(255,255,255,.08);       // light rim
+$lo:       rgba(0,0,0,.55);             // soft shadow
+$ring:     rgba(0,0,0,.28);             // ambient
+
+@mixin convex($d:14px,$b:28px) {
+  box-shadow:
+    (-$d) (-$d) $b $hi,
+    $d $d $b $lo,
+    0 22px 44px $ring;
+}
+
+@mixin concave($d:14px,$b:28px) {
+  box-shadow:
+    inset $d $d $b $lo,
+    inset (-$d) (-$d) $b $hi,
+    0 18px 36px $ring;
+}
+@mixin halo($c, $r:10px, $a:.12) { box-shadow: 0 0 0 $r rgba($c,$a), 0 12px 22px $ring; }
+
+// =================== Card ===================
+.project {
+  display: grid;
+  grid-template-columns: 1fr;
+  // justify-content: center;
+  border-radius: 18px;
+  padding: 20px 22px 24px;
+  color: $text;
+  box-shadow: 6px 6px 12px rgba(0,0,0,0.45), -6px -6px 12px rgba(255,255,255,0.05);
+  @include card-bg;
+}
+
+// =================== Image ===================
+.project__image {
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 18px;
+  @include concave(12px,24px);       
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  }
+}
+
+// =================== Text ===================
+.project__name {
+  font-size: clamp(20px, 2vw, 24px);
+  margin: 8px 0 8px;
+  color: $accent;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.45);
+}
+
+.project__description {
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.7;
+  color: $muted;
+  margin: 0 2px 18px;
+}
+
+// =================== Links row ===================
+.project__links {
+  align-self: end;
+  margin-top: 10px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.project__link {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $surface;
+  display: grid;
+  place-items: center;
+  @include convex(10px,20px);
+  svg { width: 26px; height: 26px; color: $accent; filter: drop-shadow(0 1px 0 rgba(0,0,0,.5)); }
+
+  &:hover       { transform: translateY(-2px); @include halo($accent, 6px, .12); }
+  &:active      { @include concave(10px,20px); transform: translateY(0); }
+  &:focus-visible { outline: none; @include halo($accent, 8px, .18); }
+}
+
+@media (min-width: 840px) {
+  .project { padding: 24px 26px 28px; }
+  .project__links { gap: 20px; }
+}

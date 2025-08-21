@@ -1,0 +1,14 @@
+{
+  "name": "Robertas Tamulionis | Web Developer",
+  "short_name": "RobertasDev",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1416",
+  "theme_color": "#0f1416"
+}
+
+// TO DO -  Add this later
+//   "icons": [
+//     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+//     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+//   ]

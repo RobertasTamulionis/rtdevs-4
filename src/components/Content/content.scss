@@ -1,0 +1,67 @@
+.content {
+  scroll-margin-top: 96px;
+  grid-column: 2;
+  grid-row: 1 / -1;
+  justify-items: center;
+  overflow-y: auto;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 180px 20px 0 0;
+  z-index: 100;
+  position: relative;
+  font-size: 20px;
+  border-radius: 20px;
+  box-shadow:
+    inset 12px 12px 32px rgba(0, 0, 0, 0.6),  
+    inset -12px -12px 32px rgba(22, 28, 29, 0.05); 
+  padding: 20px;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  transition: 0.7s;
+
+  @include respond-down("lgmd") {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    margin-left: 20px;
+  }
+
+  @include respond-down("sm") {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__overlay{
+    filter: blur(5px) brightness(.4);
+    box-shadow:
+    inset 0px 0px 0px rgba(0, 0, 0, 0.6),  
+    inset 0px 0px 0px rgba(22, 28, 29, 0.05); 
+  }
+  
+  .section{
+    width: 700px;
+    margin-bottom: 80px;
+
+    @include respond-down("xl") {
+        width: 580px;
+    }
+
+    @include respond-down("lgmd") {
+        width: calc(100vw - 80px);
+    }
+  }
+
+  .section-heading{
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+

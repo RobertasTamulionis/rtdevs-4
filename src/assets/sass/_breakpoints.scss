@@ -1,0 +1,51 @@
+@use "sass:map";
+
+$breakpoints: (
+  xs: 480px,
+  sm: 640px,
+  md: 768px,
+  lgmd: 900px,
+  lg: 1024px,
+  xl: 1280px
+) !default;
+
+// min-width (mobile-first)
+@mixin respond($size) {
+  $value: map.get($breakpoints, $size);
+
+  @if $value == null {
+    @error "Unknown breakpoint `#{$size}`. Valid: #{map.keys($breakpoints)}";
+  }
+
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+// max-width helper (optional)
+@mixin respond-down($size) {
+  $value: map.get($breakpoints, $size);
+
+  @if $value == null {
+    @error "Unknown breakpoint `#{$size}`. Valid: #{map.keys($breakpoints)}";
+  }
+
+  // subtract a fraction to avoid overlap with the next min-width query
+  @media (max-width: ($value - 0.02px)) {
+    @content;
+  }
+}
+
+// between two breakpoints (optional)
+@mixin respond-between($from, $to) {
+  $min: map.get($breakpoints, $from);
+  $max: map.get($breakpoints, $to);
+
+  @if $min == null or $max == null {
+    @error "Unknown breakpoints. Valid: #{map.keys($breakpoints)}";
+  }
+
+  @media (min-width: $min) and (max-width: ($max - 0.02px)) {
+    @content;
+  }
+}

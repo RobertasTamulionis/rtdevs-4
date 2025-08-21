@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Robertas Tamulionis | Web Developer</title>
+    <meta name="description" content="Portfolio of Robertas Tamulionis — frontend web developer specializing in React, TypeScript, Redux, and SCSS." />
+    <meta name="author" content="Robertas Tamulionis" />
+    <meta name="robots" content="index, follow" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0f1416" />
+    <link rel="canonical" href="https://YOUR_DOMAIN/" />
+
+    <!-- Icons & PWA (place files in /public) -->
+    <link rel="icon" type="image/svg+xml" href="/logo-2.svg" />
+    <!-- Optional: add /favicon.ico in /public to avoid browser's default request -->
+    <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Social (Open Graph + Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Robertas Tamulionis — Web Developer" />
+    <meta property="og:title" content="Robertas Tamulionis | Web Developer" />
+    <meta property="og:description" content="Frontend developer focused on React, TypeScript, performance, and UX." />
+    <meta property="og:url" content="https://YOUR_DOMAIN/" />
+    <meta property="og:image" content="https://YOUR_DOMAIN/og-image.jpg" />
+    <meta property="og:image:alt" content="Preview collage of Robertas Tamulionis projects and skills." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Robertas Tamulionis | Web Developer" />
+    <meta name="twitter:description" content="Selected projects, skills, and contact info." />
+    <meta name="twitter:image" content="https://YOUR_DOMAIN/og-image.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- DEV-ONLY: React Fast Refresh preamble
+         Keeps @vitejs/plugin-react happy in dev. Vite ignores this in production builds. -->
+    <script type="module">
+      import RefreshRuntime from "/@react-refresh";
+      RefreshRuntime.injectIntoGlobalHook(window);
+      window.$RefreshReg$ = () => {};
+      window.$RefreshSig$ = () => (type) => type;
+      window.__vite_plugin_react_preamble_installed__ = true;
+    </script>
+    <!-- DEV-ONLY: Vite client (safe in dev; ignored in production build) -->
+    <script type="module" src="/@vite/client"></script>
+
+    <!-- Optional structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Robertas Tamulionis",
+        "jobTitle": "Web Developer",
+        "url": "https://YOUR_DOMAIN/",
+        "image": "https://YOUR_DOMAIN/portrait.jpg",
+        "sameAs": [
+          "https://github.com/YOUR_GITHUB",
+          "https://www.linkedin.com/in/YOUR_LINKEDIN"
+        ],
+        "knowsAbout": ["React", "TypeScript", "Redux", "SCSS", "GSAP", "Vite"]
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      <p style="padding:1rem;text-align:center">
+        This site works best with JavaScript enabled.
+      </p>
+    </noscript>
+
+    <div id="root"></div>
+
+    <!-- App entry -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

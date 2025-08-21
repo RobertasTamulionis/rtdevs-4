@@ -1,0 +1,26 @@
+//__COLORS
+$black: rgb(22, 28, 29);
+$black-lighter: #363230;
+$black-light: #4D4946;
+$black-lightest: #6A6867;
+
+$orange: rgb(248, 190, 161);
+$orange-dark: #7b442c;
+$orange-light: #F7DACC;
+
+//__OTHERS
+// $font-stack: "Poiret One", sans-serif;
+$font-stack: "Nothing You Could Do", sans-serif;
+$font-stack: "Poppins", sans-serif;
+$font-stack: "Montserrat Alternates", sans-serif;
+
+:root {
+  --black: #{$black};
+  --black-lighter: #{$black-lighter};
+  --black-light: #{$black-light};
+  --black-lightest: #{$black-lightest};
+  --orange: #{$orange};
+  --orange-dark: #{$orange-dark};
+  --orange-light: #{$orange-light};
+  --font-stack: #{$font-stack};
+}

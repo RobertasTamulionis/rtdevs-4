@@ -1,0 +1,38 @@
+.logo{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 102;
+
+  @include respond-down("lgmd") {
+        left: 20px;
+        transform: unset;
+    }
+
+  &__icon-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow:
+      inset 6px 6px 16px rgba(0, 0, 0, 0.6),  // darker shadow bottom-right
+      inset -6px -6px 16px rgba(22, 28, 29, 0.05); // subtle light top-left (peach tint)
+
+      @include respond-down("lg") {
+          width: 200px
+      }
+
+      @include respond-down("lgmd") {
+          width: 120px;
+          height: 100px;
+          margin-top: 10px;
+      }
+  }
+  svg{
+    width: 160px;
+  }
+}
