@@ -9,7 +9,6 @@ $breakpoints: (
   xl: 1280px
 ) !default;
 
-// min-width (mobile-first)
 @mixin respond($size) {
   $value: map.get($breakpoints, $size);
 
@@ -22,7 +21,6 @@ $breakpoints: (
   }
 }
 
-// max-width helper (optional)
 @mixin respond-down($size) {
   $value: map.get($breakpoints, $size);
 
@@ -30,13 +28,11 @@ $breakpoints: (
     @error "Unknown breakpoint `#{$size}`. Valid: #{map.keys($breakpoints)}";
   }
 
-  // subtract a fraction to avoid overlap with the next min-width query
   @media (max-width: ($value - 0.02px)) {
     @content;
   }
 }
 
-// between two breakpoints (optional)
 @mixin respond-between($from, $to) {
   $min: map.get($breakpoints, $from);
   $max: map.get($breakpoints, $to);

@@ -17,7 +17,7 @@
   padding: 20px;
   scrollbar-width: none; 
   -ms-overflow-style: none;
-  transition: 0.7s;
+  transition: var(--transition);
 
   @include respond-down("lgmd") {
     grid-column: 1 / -1;
@@ -28,6 +28,9 @@
   @include respond-down("sm") {
     font-size: 16px;
     padding: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   &::-webkit-scrollbar {
@@ -43,10 +46,10 @@
   
   .section{
     width: 700px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 
     @include respond-down("xl") {
-        width: 580px;
+        width: 530px;
     }
 
     @include respond-down("lgmd") {

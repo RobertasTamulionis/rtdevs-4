@@ -9,10 +9,11 @@ $orange-dark: #7b442c;
 $orange-light: #F7DACC;
 
 //__OTHERS
-// $font-stack: "Poiret One", sans-serif;
 $font-stack: "Nothing You Could Do", sans-serif;
 $font-stack: "Poppins", sans-serif;
 $font-stack: "Montserrat Alternates", sans-serif;
+$transition: .5s ease;
+$transition-fast: .3s ease;
 
 :root {
   --black: #{$black};
@@ -23,4 +24,6 @@ $font-stack: "Montserrat Alternates", sans-serif;
   --orange-dark: #{$orange-dark};
   --orange-light: #{$orange-light};
   --font-stack: #{$font-stack};
+  --transition: #{$transition};
+  --transition-fast: #{$transition-fast};
 }

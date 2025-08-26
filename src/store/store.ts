@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { navSlice } from "./nav-slice.ts";
+import { navSlice } from "./slices/nav-slice.ts";
+import { languageSlice } from "./slices/language-slice.ts";
 
 export const store = configureStore({
     reducer: {
-        nav: navSlice.reducer
+        nav: navSlice.reducer,
+        language: languageSlice.reducer,
     }
 });
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
-import { toggleNav } from "../../store/nav-slice";
+import { toggleNav } from "../../store/slices/nav-slice";
 import About from "../../pages/Home/Home";
 import Skills from "../../pages/Skills/Skills";
 import Projects from "../../pages/Projects/Projects";
@@ -14,7 +14,7 @@ function Content() {
   useEffect(()=> {
      const handleResize = () => {
       if (active) {
-        dispatch(toggleNav()); // set active -> false
+        dispatch(toggleNav());
       }
     };
 

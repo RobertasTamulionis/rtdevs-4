@@ -1,4 +1,3 @@
-// useActiveSection.ts
 import { useEffect, useRef, useState } from "react";
 
 export function useActiveSection(
@@ -36,18 +35,15 @@ export function useActiveSection(
       const first = sections[0];
       const last = sections[sections.length - 1];
 
-      // TOP: exactly at/near start → first section
       if (root.scrollTop <= 2 && first) return first.id;
 
-      // Keep first active until the second section crosses the activation line
       const second = sections[1];
       if (first && second) {
         const activationLine = root.scrollTop + topOffset;
-        const secondTop = second.offsetTop; // relative to scroller
+        const secondTop = second.offsetTop; 
         if (activationLine < secondTop) return first.id;
       }
 
-      // BOTTOM: at/near end → last section
       const epsilon = 2;
       if (root.scrollTop + root.clientHeight >= root.scrollHeight - epsilon && last) {
         return last.id;
@@ -62,7 +58,6 @@ export function useActiveSection(
 
       if (!candidate) return;
 
-      // Functional update so we compare with the *current* value, not a stale closure
       setActiveId((prev) => (prev === candidate ? prev : candidate));
     };
 
@@ -83,18 +78,15 @@ export function useActiveSection(
 
     sections.forEach((s) => io.observe(s));
 
-    // Edge cases (top/bottom) on manual scroll
     const onScroll = () => applyNext();
     root.addEventListener("scroll", onScroll, { passive: true });
 
-    // Initial evaluation (important when landing near top)
     applyNext();
 
     return () => {
       io.disconnect();
       root.removeEventListener("scroll", onScroll);
     };
-    // deps: don't include activeId (we're using functional setState)
   }, [sectionIds.join("|"), rootSelector, topOffset]);
 
   return activeId;

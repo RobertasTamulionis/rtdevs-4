@@ -1,4 +1,29 @@
 @mixin card-bg {
   background: radial-gradient(120% 120% at 10% 8%, rgba(185, 185, 185, 0.1), transparent 45%),
-                radial-gradient(140% 140% at 120% 120%, rgba(0,0,0,0.65), transparent 40%);
+              radial-gradient(140% 140% at 120% 120%, rgba(0,0,0,0.65), transparent 40%);
+  box-shadow: 
+    10px 10px 20px rgba(0,0,0,.55), 
+    -10px -10px 20px rgba(255,255,255,.035), 
+    inset 0 0 0 1px rgba(255,255,255,.04);
+  transition: var(--transition);
+
+  &:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 
+      12px 12px 26px rgba(0,0,0,.55), 
+      -12px -12px 26px rgba(255,255,255,.03),
+      inset 0 0 4px 1px rgba(255, 255, 255, 0.1); 
+  }
+}
+
+@mixin inset-soft {
+  box-shadow:
+    inset 8px 8px 14px rgba(0, 0, 0, .55),
+    inset -8px -8px 14px rgba(255, 255, 255, 0.06);
+}
+
+@mixin inset-soft-hover {
+  box-shadow:
+    inset 0px 0px 0px rgba(0, 0, 0, .55),
+    inset 0px 0px 0px rgba(255, 255, 255, 0.06);
 }

@@ -19,8 +19,8 @@
     border-radius: 20px;
     width: 300px;
     box-shadow:
-      inset 6px 6px 16px rgba(0, 0, 0, 0.6),  // darker shadow bottom-right
-      inset -6px -6px 16px rgba(22, 28, 29, 0.05); // subtle light top-left (peach tint)
+      inset 6px 6px 16px rgba(0, 0, 0, 0.6),  
+      inset -6px -6px 16px rgba(22, 28, 29, 0.05); 
 
       @include respond-down("lg") {
           width: 200px

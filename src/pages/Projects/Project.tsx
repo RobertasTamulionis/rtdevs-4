@@ -1,12 +1,14 @@
+import { useAppSelector } from "../../store/hooks";
 import { FaLink } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { type ProjectItem } from "../../assets/helpers/projectsList";
+import { type LocalizedProject } from "../../assets/helpers/projectsList";
 
 type ProjectProps = {
-  project: ProjectItem;
+  project: LocalizedProject;
 };
 
 function Project({ project }: ProjectProps) {
+  
   const { name, description, link, git, image } = project;
 
   return (
@@ -17,11 +19,11 @@ function Project({ project }: ProjectProps) {
           <h4 className="project__name">{name}</h4>
           <p className="project__description">{description}</p>
           <div className="project__links">
-            <a className="project__link" href={link}>
+            <a className="project__link" href={link} target="_blank" rel="noopener noreferrer">
               <FaLink/>
             </a>
             { git &&  
-              <a className="project__link" href={git}>
+              <a className="project__link" href={git} target="_blank" rel="noopener noreferrer">
                 <FaGithub/>
               </a>
             }

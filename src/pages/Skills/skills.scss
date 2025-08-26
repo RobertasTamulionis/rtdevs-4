@@ -1,16 +1,3 @@
-@use "sass:color";
-
-$bg: #0e1214;
-$panel: #13181a;
-$panel-2: #101517;
-$ink: #e8dbd1;
-$muted: color.mix($ink, $panel, 65%);
-$peach: #e6b197;
-$peach-ink: #171717;
-
-$neu-out: 10px 10px 20px rgba(0,0,0,.55), -10px -10px 20px rgba(255,255,255,.035);
-$neu-in: inset 8px 8px 14px rgba(0,0,0,.45), inset -8px -8px 14px rgba(255,255,255,.03);
-
 .skills {
   &__description{
     margin-bottom: 40px;
@@ -31,11 +18,7 @@ $neu-in: inset 8px 8px 14px rgba(0,0,0,.45), inset -8px -8px 14px rgba(255,255,2
   flex: 1;
   border-radius: 22px;
   padding: clamp(18px, 3vw, 26px);
-  box-shadow: $neu-out, inset 0 0 0 1px rgba(255,255,255,.04);
-  transition: box-shadow .25s ease, transform .25s ease;
   @include card-bg;
-
-  &:hover { transform: translateY(-2px); box-shadow: 12px 12px 26px rgba(0,0,0,.55), -12px -12px 26px rgba(255,255,255,.03); }
 
   h2 {
     margin: 4px 0 16px;
@@ -60,27 +43,35 @@ $neu-in: inset 8px 8px 14px rgba(0,0,0,.45), inset -8px -8px 14px rgba(255,255,2
     grid-template-columns: 44px 1fr;
     align-items: center;
     gap: 14px;
-
-    background: rgba(255,255,255, .02);
     border-radius: 16px;
     padding: 10px 14px;
     margin: 0 0 14px;
-    box-shadow:
-      0 8px 18px rgba(0,0,0,.35),
-      inset 0 0 0 1px rgba(255,255,255,.05);
-    transition: transform .18s ease, box-shadow .18s ease;
+    transition: var(--transition-fast);
+    box-shadow: 
+      inset 6px 6px 12px rgba(0,0,0,0.45), 
+      inset -6px -6px 12px rgba(255,255,255,0.05); 
+    transition: var(--transition-fast);
 
-    &:last-child { margin-bottom: 0; }
+    &:hover { 
+      box-shadow: 
+        inset 0px 0px 0px rgba(0,0,0,0.45),
+        inset 0 0 0 1px rgba(255,255,255,0.03); 
+    }
+
+    &:last-child { 
+      margin-bottom: 0; 
+    }
 
     &::before {
       content: "";
-      width: 44px; height: 44px;
-      border-radius: 12px;
+      width: 44px; 
+      height: 44px;
+      border-radius: 14px;
       background:
         radial-gradient(120% 120% at 30% 25%, rgba(230,177,151,.9), rgba(230,177,151,.7)),
         linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.08));
-      box-shadow: $neu-in, 0 8px 16px rgba(230,177,151,.15);
       grid-column: 1 / 2;
+      @include inset-soft;
     }
 
     &::after {
@@ -100,18 +91,9 @@ $neu-in: inset 8px 8px 14px rgba(0,0,0,.45), inset -8px -8px 14px rgba(255,255,2
       left: 14px;                       
       width: 44px; height: 44px;
       padding: 9px;                      
-      color: $peach-ink;
+      color: var(--black);
       z-index: 1;
       filter: drop-shadow(0 1px 1px rgba(0,0,0,.25));
-    }
-
-    &:hover,
-    &:focus-within {
-      transform: translateY(-2px);
-      box-shadow:
-        0 12px 26px rgba(0,0,0,.4),
-        inset 0 0 0 1px rgba(255,255,255,.06),
-        0 0 0 2px rgba($peach,.15);
     }
   }
 
@@ -119,6 +101,5 @@ $neu-in: inset 8px 8px 14px rgba(0,0,0,.45), inset -8px -8px 14px rgba(255,255,2
   &.orbit--2 li { transform: none !important; }
 }
 
-/* ---------- Extras ---------- */
-.skills *:focus-visible { outline: 2px solid rgba($peach,.35); outline-offset: 3px; }
+.skills *:focus-visible { outline: 2px solid rgba(var(--orange),.35); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .skills * { transition: none !important; } }
