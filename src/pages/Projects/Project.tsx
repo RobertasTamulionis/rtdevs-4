@@ -1,4 +1,3 @@
-import { useAppSelector } from "../../store/hooks";
 import { FaLink } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { type LocalizedProject } from "../../assets/helpers/projectsList";
