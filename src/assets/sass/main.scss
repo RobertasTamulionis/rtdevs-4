@@ -102,14 +102,3 @@ a:active {
   margin-inline: auto;
   padding-inline: var(--gutter);     /* don’t use only vw on mobile */
 }
-
-/* 3) media-query fallback if you used only vw before */
-@media (max-width: 420px) {
-  .header, .hero, .logo { padding-left: max(16px, env(safe-area-inset-left)); }
-}
-
-/* 4) images/SVG sizing so they don’t nuke padding by overflowing */
-img, svg { display: block; max-width: 100%; height: auto; }
-
-/* 5) avoid 100vw on containers — it includes the scrollbar on iOS */
-.full-width { width: 100%; /* not 100vw */ }
