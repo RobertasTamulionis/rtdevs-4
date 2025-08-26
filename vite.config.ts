@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), svgr(),],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // enable @ in SCSS too
+      '@': path.resolve(__dirname, './src'), 
     },
   },
   css: {
@@ -20,5 +20,8 @@ export default defineConfig({
         `
       }
     }
-  }
+  },
+  define: {
+    __DEFINES__: {}, 
+  },
 })
