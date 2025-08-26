@@ -1,11 +1,9 @@
 .content {
   scroll-margin-top: 96px;
-  grid-column: 2;
+  grid-column: 2 / -1;
   grid-row: 1 / -1;
-  justify-items: center;
   overflow-y: auto;
   margin-top: 20px;
-  margin-right: 20px;
   z-index: 100;
   position: relative;
   font-size: 20px;
@@ -44,15 +42,18 @@
   }
   
   .section{
-    width: 700px;
+    max-width: 700px;
+    width: 100%;
     margin-bottom: 40px;
+    margin-inline: auto;
 
     @include respond-down("xl") {
-        width: 530px;
+        max-width: 530px;
     }
 
     @include respond-down("lgmd") {
-        width: calc(100% - 40px);
+        max-width: unset;
+        padding-inline: 20px;
     }
   }
 
