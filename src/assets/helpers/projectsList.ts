@@ -5,7 +5,6 @@ import ZeiptProject from '../images/photos/zeipt-project.png';
 import Rtdevs3 from '../images/photos/rtdevs-3.png';
 import Rtdevs4 from '../images/photos/rtdevs-4.png';
 
-// A single localized project entry
 export type LocalizedProject = {
     name: string;
     description: string;
@@ -14,7 +13,6 @@ export type LocalizedProject = {
     image: string;
 }
 
-// Full project with English + Norwegian versions
 export type ProjectItem = {
     en: LocalizedProject;
     no: LocalizedProject;

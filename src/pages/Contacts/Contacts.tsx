@@ -3,6 +3,8 @@ import { contentText } from "../../assets/helpers/languageHelpers";
 import { FaMobileAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { IoDocumentAttach } from "react-icons/io5";
+import cvEn from '../../assets/cv/R.T.CV.English.pdf';
+import cvNo from '../../assets/cv/R.T.CV.Norwegian.pdf';
 import './contacts.scss';
 
 export default function ContactCard() {
@@ -43,13 +45,13 @@ export default function ContactCard() {
               <p className="contact-socials__social-title">Github</p>
             </a>
 
-             <a className="contact-socials__social" href='/src/assets/cv/R.T.CV.Norwegian.pdf' target="_blank" rel="noreferrer" download>
+             <a className="contact-socials__social" href={cvNo} target="_blank" rel="noreferrer">
               <span className="contact-socials__social-icon">
                 <IoDocumentAttach />
               </span>
               <p className="contact-socials__social-title">CV(no)</p>
             </a>
-             <a className="contact-socials__social" href='/src/assets/cv/R.T.CV.English.pdf' target="_blank" rel="noreferrer" download>
+             <a className="contact-socials__social" href={cvEn} target="_blank" rel="noreferrer">
               <span className="contact-socials__social-icon">
                 <IoDocumentAttach />
               </span>
