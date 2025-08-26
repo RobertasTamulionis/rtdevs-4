@@ -21,7 +21,9 @@ export default defineConfig({
       }
     }
   },
-  define: {
-    __DEFINES__: {}, 
+   define: {
+    __DEFINES__: {},                  
+    __HMR_CONFIG_NAME__: JSON.stringify(''), 
   },
+  build: { sourcemap: true },
 })
