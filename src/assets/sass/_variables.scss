@@ -26,4 +26,5 @@ $transition-fast: .3s ease;
   --font-stack: #{$font-stack};
   --transition: #{$transition};
   --transition-fast: #{$transition-fast};
+  --gutter: clamp(16px, 5vw, 40px); 
 }
