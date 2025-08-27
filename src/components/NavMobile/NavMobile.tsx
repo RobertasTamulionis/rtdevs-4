@@ -35,13 +35,11 @@ function NavMobile() {
 
       const bars = toggleRef.current?.querySelectorAll("span") ?? [];
 
-      // Burger -> X
       tl.current
         .to(bars[0], { y: 0, rotate: 45, duration: 0.18 }, 0)
         .to(bars[1], { opacity: 0, scaleX: 0.2, duration: 0.18 }, 0)
         .to(bars[2], { y: 0, rotate: -45, duration: 0.18 }, 0);
 
-      // Expand the wrapper to full-screen glass
       tl.current.to(wrapperRef.current, {
         backgroundColor: "rgba(22,28,29,0.8)",
         width: () => window.innerWidth - 40,
@@ -50,14 +48,12 @@ function NavMobile() {
         ease: "power4.in",
       });
 
-      // Reveal list & allow interaction
       tl.current.to(listRef.current, {
         autoAlpha: 1,
         pointerEvents: "auto",
         duration: 0.15,
       });
 
-      // Stagger links in (and have the switch come in last if you prefer)
       const staggerTargets = [...btnRefs.current, switchRef.current].filter(Boolean) as Element[];
       tl.current.to(staggerTargets, {
         y: 0,
@@ -81,7 +77,6 @@ function NavMobile() {
     return () => ctx.revert();
   }, []);
 
-
   useEffect(() => {
     if (!tl.current) return;
     active ? tl.current.play() : tl.current.reverse();
@@ -96,20 +91,34 @@ function NavMobile() {
   return (
     <div className='nav-mobile'>
       <Logo/>
-      <div className="nav-mobile__nav-wrapper" ref={wrapperRef}>
+      <div
+        className="nav-mobile__nav-wrapper"
+        ref={wrapperRef}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!active}
+        aria-label="Mobile navigation"
+      >
         <button
           className="nav-mobile__toggle-btn"
           ref={toggleRef}
           onClick={() => dispatch(toggleNav())}
           aria-expanded={active}
-          aria-label="Toggle navigation"
+          aria-controls="nav-mobile-list"
+          aria-label={active ? "Close menu" : "Open menu"}
+          type="button"
         >
           <span />
           <span />
           <span />
         </button>
 
-        <nav className="nav-mobile__nav-list" ref={listRef}>
+        <nav
+          className="nav-mobile__nav-list"
+          ref={listRef}
+          id="nav-mobile-list"
+          aria-label="Sections"
+        >
           {SECTION_IDS.map((id, i) => {
             const isActive = activeId === id;
             return (
@@ -120,7 +129,7 @@ function NavMobile() {
                 <button
                   ref={addBtnRef}
                   onClick={() => onLinkClick(id)}
-                  aria-current={isActive ? 'true' : undefined}
+                  aria-current={isActive ? 'page' : undefined}
                   data-active={isActive || undefined}
                 >
                   {textTranslations[i]}
@@ -129,7 +138,8 @@ function NavMobile() {
             );
           })}
         </nav>
-         <div className="nav-mobile__switch-wrapper" ref={switchRef}>
+
+        <div className="nav-mobile__switch-wrapper" ref={switchRef}>
           <LanguageToggle/>
         </div>
       </div>

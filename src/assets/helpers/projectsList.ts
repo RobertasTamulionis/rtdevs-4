@@ -87,15 +87,15 @@ export const projectsList: ProjectItem[] = [
         en: {
             name: 'Rtdevs-4',
             description: 'This is the fourth iteration of my portfolio page.',
-            link: 'https://google.com',
-            git: 'https://github.com/RobertasTamulionis/rtdevs-3',
+            link: 'https://rtdevs.io',
+            git: 'https://github.com/RobertasTamulionis/rtdevs-4',
             image: Rtdevs4,
         },
         no: {
             name: 'Rtdevs-4',
             description: 'Dette er den fjerde iterasjonen av min porteføljeside.',
-            link: 'https://google.com',
-            git: 'https://github.com/RobertasTamulionis/rtdevs-3',
+            link: 'https://rtdevs.io',
+            git: 'https://github.com/RobertasTamulionis/rtdevs-4',
             image: Rtdevs4,
         }
     },
@@ -103,14 +103,14 @@ export const projectsList: ProjectItem[] = [
         en: {
             name: 'Rtdevs-3',
             description: 'This is the third iteration of my portfolio page.',
-            link: 'https://google.com',
+            link: 'https://rtdevs-3.rtdevs.io/',
             git: 'https://github.com/RobertasTamulionis/rtdevs-3',
             image: Rtdevs3,
         },
         no: {
             name: 'Rtdevs-3',
             description: 'Dette er den tredje iterasjonen av min porteføljeside.',
-            link: 'https://google.com',
+            link: 'https://rtdevs-3.rtdevs.io/',
             git: 'https://github.com/RobertasTamulionis/rtdevs-3',
             image: Rtdevs3,
         }

@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   z-index: 102;
+  cursor: pointer;
 
   @include respond-down("lgmd") {
         left: 20px;
