@@ -21,7 +21,7 @@ export default function ContactCard() {
               <FaMobileAlt/>
             </span>
             <a className="contact-link" href={`tel:${'465 08 761'.replace(/\s+/g, "")}`}>
-              + 465 08 761
+              +47 465 08 761
             </a>
           </li>
           <li className="contact-row">
