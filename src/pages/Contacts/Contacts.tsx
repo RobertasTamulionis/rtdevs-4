@@ -20,7 +20,7 @@ export default function ContactCard() {
             <span className="contact-icon">
               <FaMobileAlt/>
             </span>
-            <a className="contact-link" href={`tel:${'465 08 761'.replace(/\s+/g, "")}`}>
+            <a className="contact-link" href={`tel:+47${'465 08 761'.replace(/\s+/g, "")}`}>
               +47 465 08 761
             </a>
           </li>
