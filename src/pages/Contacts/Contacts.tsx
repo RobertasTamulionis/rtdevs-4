@@ -3,8 +3,8 @@ import { contentText } from "../../assets/helpers/languageHelpers";
 import { FaMobileAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { IoDocumentAttach } from "react-icons/io5";
-import cvEn from '../../assets/cv/R.T.CV.English.pdf';
-import cvNo from '../../assets/cv/R.T.CV.Norwegian.pdf';
+import cvEn from '../../assets/cv/RT_CV_en.pdf';
+import cvNo from '../../assets/cv/RT_CV_no.pdf';
 import './contacts.scss';
 
 export default function ContactCard() {
