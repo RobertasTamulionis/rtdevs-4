@@ -18,7 +18,7 @@ export const contentText: ContentText = {
     skills: {
       title: 'Skills',
       tagline: 'Over the past 6 years as a web developer, I’ve worked with a wide range of tools and technologies. Some have become part of my everyday workflow, while others I’ve used to solve specific challenges. To give a clearer picture, I’ve grouped my skills into two categories',
-      category_1: 'Comfortbale',
+      category_1: 'Comfortable',
       category_2: 'Additional Experience'
     },
     projects: {
