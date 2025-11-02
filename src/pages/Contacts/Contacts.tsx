@@ -3,12 +3,12 @@ import { contentText } from "../../assets/helpers/languageHelpers";
 import { FaMobileAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { IoDocumentAttach } from "react-icons/io5";
-import cvEn from '../../assets/cv/RT_CV_en.pdf';
-import cvNo from '../../assets/cv/RT_CV_no.pdf';
-import './contacts.scss';
+import cvEn from "../../assets/cv/RT_CV_en.pdf";
+import cvNo from "../../assets/cv/RT_CV_no.pdf";
+import "./contacts.scss";
 
 export default function ContactCard() {
-  const { currentLanguage } = useAppSelector(state => state.language);
+  const { currentLanguage } = useAppSelector((state) => state.language);
   const { title } = contentText[currentLanguage].contacts;
 
   return (
@@ -18,41 +18,67 @@ export default function ContactCard() {
         <ul className="contact-list">
           <li className="contact-row">
             <span className="contact-icon">
-              <FaMobileAlt/>
+              <FaMobileAlt />
             </span>
-            <a className="contact-link" href={`tel:+47${'465 08 761'.replace(/\s+/g, "")}`}>
+            <a
+              className="contact-link"
+              href={`tel:+47${"465 08 761".replace(/\s+/g, "")}`}
+              aria-label="Call +47 465 08 761"
+            >
               +47 465 08 761
             </a>
           </li>
           <li className="contact-row">
-            <span className="contact-icon">
-              <IoIosMail/>
+            <span className="contact-icon" aria-hidden="true">
+              <IoIosMail />
             </span>
-            <a className="contact-link" href='mailto:rtdevs@protonmail.com'>rtdevs@protonmail.com</a>
+            <a className="contact-link" href="mailto:rtdevs@protonmail.com">
+              rtdevs@protonmail.com
+            </a>
           </li>
           <li className="contact-socials">
-            <a className="contact-socials__social" href='https://linkedin.com/in/robertas-tamulionis' target="_blank" rel="noreferrer">
-              <span className="contact-socials__social-icon">
-                <FaLinkedin/>
+            <a
+              className="contact-socials__social"
+              href="https://linkedin.com/in/robertas-tamulionis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="contact-socials__social-icon" aria-hidden="true">
+                <FaLinkedin />
               </span>
-              <p className="contact-socials__social-title">Linkedin</p>
+              <p className="contact-socials__social-title">LinkedIn</p>
             </a>
 
-            <a className="contact-socials__social" href='https://github.com/RobertasTamulionis?tab=repositories' target="_blank" rel="noreferrer">
-              <span className="contact-socials__social-icon">
-                <FaGithub/>
+            <a
+              className="contact-socials__social"
+              href="https://github.com/RobertasTamulionis?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="contact-socials__social-icon" aria-hidden="true">
+                <FaGithub />
               </span>
-              <p className="contact-socials__social-title">Github</p>
+              <p className="contact-socials__social-title">GitHub</p>
             </a>
 
-             <a className="contact-socials__social" href={cvNo} target="_blank" rel="noreferrer">
-              <span className="contact-socials__social-icon">
+            <a
+              className="contact-socials__social"
+              href={cvNo}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="contact-socials__social-icon" aria-hidden="true">
                 <IoDocumentAttach />
               </span>
               <p className="contact-socials__social-title">CV(no)</p>
             </a>
-             <a className="contact-socials__social" href={cvEn} target="_blank" rel="noreferrer">
-              <span className="contact-socials__social-icon">
+            <a
+              className="contact-socials__social"
+              href={cvEn}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="contact-socials__social-icon" aria-hidden="true">
                 <IoDocumentAttach />
               </span>
               <p className="contact-socials__social-title">CV(en)</p>
@@ -61,4 +87,5 @@ export default function ContactCard() {
         </ul>
       </div>
     </section>
-  )};
+  );
+}

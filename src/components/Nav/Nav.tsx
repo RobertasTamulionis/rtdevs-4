@@ -25,10 +25,7 @@ function Nav() {
         {SECTION_IDS.map((id, i) => {
           const isActive = activeId === id;
           return (
-            <li
-              key={id}
-              className={`nav__item ${isActive ? "is-active" : ""}`}
-            >
+            <li key={id} className={`nav__item ${isActive ? "is-active" : ""}`}>
               <a
                 ref={id === "home" ? linkRef : undefined}
                 href={`#${id}`}
