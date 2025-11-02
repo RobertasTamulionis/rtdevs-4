@@ -5,14 +5,14 @@ import About from "../../pages/Home/Home";
 import Skills from "../../pages/Skills/Skills";
 import Projects from "../../pages/Projects/Projects";
 import Contacts from "../../pages/Contacts/Contacts";
-import './content.scss';
+import "./content.scss";
 
 function Content() {
   const dispatch = useAppDispatch();
-  const { active } = useAppSelector(state => state.nav);
+  const { active } = useAppSelector((state) => state.nav);
 
-  useEffect(()=> {
-     const handleResize = () => {
+  useEffect(() => {
+    const handleResize = () => {
       if (active) {
         dispatch(toggleNav());
       }
@@ -23,16 +23,16 @@ function Content() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  },[active, dispatch]);
-  
+  }, [active, dispatch]);
+
   return (
-    <section className={`content ${active ? 'content__overlay' : ''}`}>
-        <About/>
-        <Skills/>
-        <Projects/>
-        <Contacts/>
+    <section className={`content ${active ? "content__overlay" : ""}`}>
+      <About />
+      <Skills />
+      <Projects />
+      <Contacts />
     </section>
-  )
+  );
 }
 
 export default Content;
