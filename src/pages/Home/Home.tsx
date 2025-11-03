@@ -1,6 +1,5 @@
 import { useAppSelector } from "../../store/hooks";
 import { contentText } from "../../assets/helpers/languageHelpers";
-import Portrait2 from "../../assets/images/photos/portrait-2.webp";
 import "./home.scss";
 
 function Home() {
@@ -12,10 +11,11 @@ function Home() {
       <div className="home__heading">
         <img
           className="home__heading-image"
-          src={Portrait2}
+          src="/images/portrait-2.webp"
+          srcSet="/images/portrait-2.webp 1x, /images/portrait-2@2x.webp 2x"
           alt="portrait"
           width="200"
-          height="370"
+          height="374"
           decoding="async"
           fetchPriority="high"
         />

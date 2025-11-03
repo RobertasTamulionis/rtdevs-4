@@ -1,9 +1,9 @@
-import OneCall from '../images/photos/onecall.png';
-import OneCallWebshop from '../images/photos/onecall-webshop.png';
-import Zeipt from '../images/photos/zeipt.png';
-import ZeiptProject from '../images/photos/zeipt-project.png';
-import Rtdevs3 from '../images/photos/rtdevs-3.png';
-import Rtdevs4 from '../images/photos/rtdevs-4.png';
+import OneCall from '../images/photos/onecall.webp';
+import OneCallWebshop from '../images/photos/onecall-webshop.webp';
+import Zeipt from '../images/photos/zeipt.webp';
+import ZeiptProject from '../images/photos/zeipt-project.webp';
+import Rtdevs3 from '../images/photos/rtdevs-3.webp';
+import Rtdevs4 from '../images/photos/rtdevs-4.webp';
 
 export type LocalizedProject = {
     name: string;
