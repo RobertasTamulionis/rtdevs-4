@@ -14,7 +14,7 @@ function Project({ project }: ProjectProps) {
       <div className="project__image">
         <img src={image} alt={`project - ${name}`} />
       </div>
-      <h4 className="project__name">{name}</h4>
+      <h2 className="project__name">{name}</h2>
       <p className="project__description">{description}</p>
       <div className="project__links">
         <a

@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../store/hooks";
 import { contentText } from "../../assets/helpers/languageHelpers";
-import Portrait2 from "../../assets/images/photos/portrait-2.png";
+import Portrait2 from "../../assets/images/photos/portrait-2.webp";
 import "./home.scss";
 
 function Home() {
@@ -10,7 +10,15 @@ function Home() {
   return (
     <section className="section home" id="home">
       <div className="home__heading">
-        <img className="home__heading-image" src={Portrait2} alt="portrait" />
+        <img
+          className="home__heading-image"
+          src={Portrait2}
+          alt="portrait"
+          width="200"
+          height="370"
+          decoding="async"
+          fetchPriority="high"
+        />
         <div className="home__heading-text">
           <h1>
             Robertas <br /> Tamulionis
